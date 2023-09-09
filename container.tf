@@ -4,9 +4,9 @@ resource "azurerm_container_group" "docker" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
-  ip_address_type    = "Private"
-  network_profile_id = azurerm_network_profile.docker.id
-  os_type            = "Linux"
+  ip_address_type = "Private"
+  subnet_ids      = [azurerm_subnet.docker.id]
+  os_type         = "Linux"
 
   container {
     name   = "vault"
@@ -14,7 +14,7 @@ resource "azurerm_container_group" "docker" {
     cpu    = "1"
     memory = "2"
 
-    commands = [ "/bin/sh", "-c", "vault server -config=/etc/vault/config/config.hcl" ]
+    commands = ["/bin/sh", "-c", "vault server -config=/etc/vault/config/config.hcl"]
 
     ports {
       port     = 8200
