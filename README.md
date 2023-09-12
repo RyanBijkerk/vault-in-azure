@@ -1,1 +1,3 @@
-init
+This repo contains an example for the following blog post: https://www.logitblog.com/deploying-a-hashicorp-vault-in-microsoft-azure-via-terraform/
+
+This blog post discusses the deployment of HashiCorp Vault on Microsoft Azure using Terraform. HashiCorp Vault is an identity-based secrets and encryption management system that centralizes and secures sensitive data like passwords and API keys. The post explains why HashiCorp Vault is chosen over Azure KeyVault in a multi-cloud setup. It provides detailed Terraform configurations for deploying Vault within Azure, including resource groups, virtual networks, storage accounts, and container instances. The post concludes by emphasizing the flexibility and benefits of using HashiCorp Vault in various deployment scenarios.
